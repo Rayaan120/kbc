@@ -47,7 +47,14 @@ const Home = () => {
     text: "From setup to execution, everything was flawless. Their drinks became the highlight of the entire festival.",
     date: "3 weeks ago",
     avatar: "LR"
-  }
+  },
+  {
+    name: "Sarah Chen",
+    rating: 5,
+    text: "KBC transformed our corporate event into something extraordinary. The molecular mixology was absolutely stunning!",
+    date: "2 weeks ago",
+    avatar: "SC"
+  },
 ];
 
   const [activeIndex, setActiveIndex] = useState(0);
