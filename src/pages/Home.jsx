@@ -145,76 +145,83 @@ useEffect(() => {
 </section>
 
 {/* Services Preview - Asymmetric Layout */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent"></div>
-        
-        <div className="max-w-8xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            {/* Left - Services */}
-            <div className="space-y-12">
-              <div>
-                <h2 className="text-6xl font-black text-white mb-6">
-                  SIGNATURE <br />
-                  <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                    EXPERIENCES
-                  </span>
-                </h2>
-                <p className="text-xl text-zinc-400 leading-relaxed">
-                  From molecular gastronomy to classic mixology, we create bespoke beverage experiences that define luxury events.
-                </p>
-              </div>
-              
-              <div className="space-y-8">
-                {[
-                  { title: "Molecular Mixology", desc: "Scientific artistry in every glass" },
-                  { title: "Corporate Catering", desc: "Professional service for business events" },
-                  { title: "Wedding Packages", desc: "Romantic beverages for your special day" }
-                ].map((service, index) => (
-                  <div key={index} className="group cursor-pointer">
-                    <div className="flex items-center space-x-6 p-6 rounded-2xl border border-zinc-800 hover:border-zinc-700 transition-all duration-300 hover:bg-zinc-900/50">
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">
-                        {index + 1}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
-                        <p className="text-zinc-400">{service.desc}</p>
-                      </div>
-                      <ArrowRight className="h-6 w-6 text-zinc-600 group-hover:text-white group-hover:translate-x-2 transition-all duration-300" />
-                    </div>
-                  </div>
-                ))}
+{/* Services Preview - Asymmetric Layout */}
+<section className="py-32 relative overflow-hidden">
+  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent"></div>
+
+  <div className="max-w-8xl mx-auto px-6 lg:px-12">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      {/* Left - Services */}
+      <div className="space-y-12">
+        <div>
+          <h2 className="text-6xl font-black text-white mb-6">
+            SIGNATURE <br />
+            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              EXPERIENCES
+            </span>
+          </h2>
+          <p className="text-xl text-zinc-400 leading-relaxed">
+            From molecular gastronomy to classic mixology, we create bespoke beverage experiences that define luxury events.
+          </p>
+        </div>
+
+        <div className="space-y-8">
+          {[
+            { title: "Molecular Mixology", desc: "Scientific artistry in every glass" },
+            { title: "Corporate Catering", desc: "Professional service for business events" },
+            { title: "Wedding Packages", desc: "Romantic beverages for your special day" },
+            { title: "Private Parties", desc: "Unforgettable drinks tailored for intimate celebrations" },
+            { title: "Brand Launching", desc: "Innovative beverage concepts to elevate your brand event" },
+            { title: "Mixology", desc: "Creative bartending tailored for any occasion" },
+            { title: "Equipment Renting", desc: "Special glassware and bar tools for hire" }
+          ].map((service, index) => (
+            <div key={index} className="group cursor-pointer">
+              <div className="flex items-center space-x-6 p-6 rounded-2xl border border-zinc-800 hover:border-zinc-700 transition-all duration-300 hover:bg-zinc-900/50">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">
+                  {index + 1}
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
+                  <p className="text-zinc-400">{service.desc}</p>
+                </div>
+                <ArrowRight className="h-6 w-6 text-zinc-600 group-hover:text-white group-hover:translate-x-2 transition-all duration-300" />
               </div>
             </div>
+          ))}
+        </div>
+      </div>
 
-            {/* Right - Visual */}
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10 rounded-full blur-3xl"></div>
-              <div className="relative grid grid-cols-2 gap-6">
-                <div className="space-y-6">
-                  <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-2xl p-8 text-center">
-                    <div className="text-4xl mb-4">🍸</div>
-                    <h3 className="text-white font-bold">Premium Cocktails</h3>
-                  </div>
-                  <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-2xl p-8 text-center">
-                    <div className="text-4xl mb-4">🥂</div>
-                    <h3 className="text-white font-bold">Elegant Service</h3>
-                  </div>
-                </div>
-                <div className="space-y-6 mt-12">
-                  <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-2xl p-8 text-center">
-                    <div className="text-4xl mb-4">🧪</div>
-                    <h3 className="text-white font-bold">Molecular Art</h3>
-                  </div>
-                  <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-2xl p-8 text-center">
-                    <div className="text-4xl mb-4">✨</div>
-                    <h3 className="text-white font-bold">Custom Creations</h3>
-                  </div>
-                </div>
-              </div>
+      {/* Right - Visual */}
+      <div className="relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10 rounded-full blur-3xl"></div>
+        <div className="relative grid grid-cols-2 gap-6">
+          <div className="space-y-6">
+            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-2xl p-8 text-center">
+              <div className="text-4xl mb-4">🍸</div>
+              <h3 className="text-white font-bold">Premium Cocktails</h3>
+            </div>
+            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-2xl p-8 text-center">
+              <div className="text-4xl mb-4">🥂</div>
+              <h3 className="text-white font-bold">Elegant Service</h3>
+            </div>
+          </div>
+          <div className="space-y-6 mt-12">
+            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-2xl p-8 text-center">
+              <div className="text-4xl mb-4">🧪</div>
+              <h3 className="text-white font-bold">Molecular Art</h3>
+            </div>
+            <div className="bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-2xl p-8 text-center">
+              <div className="text-4xl mb-4">✨</div>
+              <h3 className="text-white font-bold">Custom Creations</h3>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
     <section className="relative py-32 overflow-hidden">
   {/* Background gradient with subtle glow */}
@@ -257,7 +264,8 @@ useEffect(() => {
           { step: "01", title: "Consultation", desc: "Understanding your vision and requirements", icon: "💭" },
           { step: "02", title: "Creation", desc: "Crafting unique recipes and presentations", icon: "🧪" },
           { step: "03", title: "Testing", desc: "Perfecting flavors and visual appeal", icon: "⚗️" },
-          { step: "04", title: "Delivery", desc: "Flawless execution at your event", icon: "✨" }
+          { step: "04", title: "Event Setups", desc: "Designing the bar & service environment", icon: "🎉" },
+          { step: "05", title: "Delivery", desc: "Seamless event delivery: bar and service", icon: "✨" }
         ].map((process, index) => (
           <div key={index} className="relative text-center group">
             {/* Glowing orb with icon */}
@@ -330,63 +338,6 @@ useEffect(() => {
   </div>
 </section>
 
-{/* Corporate Clients Section */}
-<section className="relative py-32 bg-black overflow-hidden">
-  {/* Gradient background with subtle glow */}
-  <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-black to-zinc-950"></div>
-
-  <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 text-center">
-    <h2 className="text-6xl font-black text-white mb-16">
-      CORPORATE{" "}
-      <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-        CLIENTS
-      </span>
-    </h2>
-
-    {/* Logos Grid */}
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-12 items-center justify-center">
-      {[
-        "/Images/astonmartin.png",
-        "/Images/dior.png",
-        "/Images/hermes.png",
-        "/Images/vancleef.png",
-        "/logos/pagani.png",
-        "/Images/chopard.png",
-        "/Images/versace.png",
-        "/Images/fendi.png",
-        "/logos/bmw.png",
-        "/Images/darglobal.png",
-        "/logos/damas.png",
-        "/logos/breitling.png",
-        "/Images/tiktok.png",
-        "/Images/kilian.png",
-        "/logos/hublot.png",
-        "/Images/cartier.png",
-        "/Images/DHL.png",
-        "/Images/valrhona.png",
-        "/Images/time.png",
-         "/Images/bmw.png",
-         "/Images/mastercard.png",
-         "/Images/margiela.png",
-          "/Images/octa.png",
-          "/Images/breitling.png",
-          "/Images/damas.png",
-          "/Images/hublot.png",
-      ].map((logo, i) => (
-        <div
-          key={i}
-          className="flex items-center justify-center p-6 bg-zinc-900/50 rounded-2xl border border-zinc-800 hover:border-zinc-600 transition-all duration-300 hover:scale-105"
-        >
-          <img
-            src={logo}
-            alt="Client logo"
-            className="max-h-16 object-contain grayscale hover:grayscale-0 transition duration-300"
-          />
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
 
       
 
