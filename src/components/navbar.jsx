@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react'; // removed Zap since no icon needed
+import { Menu, X, Zap } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,13 +25,11 @@ const Navbar = () => {
   ];
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-700 ${
-        isScrolled
-          ? 'bg-black/90 backdrop-blur-2xl border-b border-zinc-800'
-          : 'bg-transparent'
-      }`}
-    >
+    <nav className={`fixed w-full z-50 transition-all duration-700 ${
+      isScrolled 
+        ? 'bg-cyan-900/90 backdrop-blur-2xl border-b border-cyan-700/50' 
+        : 'bg-transparent'
+    }`}>
       <div className="max-w-8xl mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center h-24">
           {/* Logo only */}
@@ -46,27 +44,29 @@ const Navbar = () => {
 
 
 
-          {/* Desktop Navigation */}
+         {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-2">
-            {navItems.map((item) => (
+            {navItems.map((item, index) => (
               <Link
                 key={item.name}
                 to={item.path}
                 className={`relative px-8 py-4 rounded-2xl transition-all duration-500 group overflow-hidden ${
                   location.pathname === item.path
                     ? 'text-white'
-                    : 'text-zinc-400 hover:text-white'
+                    : 'text-cyan-100/70 hover:text-white'
                 }`}
               >
                 {location.pathname === item.path && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-zinc-800 to-zinc-900 rounded-2xl border border-zinc-700"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-800/80 to-teal-800/80 rounded-2xl border border-cyan-600/50 backdrop-blur-sm"></div>
                 )}
-                <span className="relative z-10 font-medium tracking-wide">
-                  {item.name}
-                </span>
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-px bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-500"></div>
+                <span className="relative z-10 font-medium tracking-wide">{item.name}</span>
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-px bg-gradient-to-r from-cyan-300 to-teal-300 group-hover:w-full transition-all duration-500"></div>
               </Link>
             ))}
+            <div className="ml-8 relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-300 to-teal-400 rounded-2xl blur opacity-40"></div>
+             
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -82,7 +82,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-2xl border-t border-zinc-800">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-cyan-900/95 backdrop-blur-2xl border-t border-cyan-700/50">
             <div className="px-6 py-8 space-y-4">
               {navItems.map((item) => (
                 <Link
@@ -91,20 +91,14 @@ const Navbar = () => {
                   onClick={() => setIsOpen(false)}
                   className={`block px-6 py-4 rounded-xl transition-all duration-300 ${
                     location.pathname === item.path
-                      ? 'text-white bg-zinc-800'
-                      : 'text-zinc-400 hover:text-white hover:bg-zinc-900'
+                      ? 'text-white bg-cyan-800/80'
+                      : 'text-cyan-100/70 hover:text-white hover:bg-cyan-800/50'
                   }`}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Link
-                to="/contact"
-                onClick={() => setIsOpen(false)}
-                className="block w-full text-center bg-white text-black px-6 py-4 rounded-xl font-bold mt-6"
-              >
-                Book Event
-              </Link>
+             
             </div>
           </div>
         )}

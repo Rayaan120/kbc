@@ -37,135 +37,128 @@ const About = () => {
   ];
 
   return (
-    <div className=" bg-black">
-      {/* Hero Section - Split Layout */}
-     <section className="py-32 relative overflow-hidden">
-
-  {/* Background elements */}
+    <div className="pt-24 bg-gradient-to-br from-cyan-400 via-teal-500 to-blue-500 min-h-screen">
+     {/* Hero Section - Split Layout */}
+<section className="py-32 relative overflow-hidden">
+  {/* Background elements (clean full gradient) */}
   <div className="absolute inset-0">
-    <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-purple-900/10 to-transparent"></div>
-    <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-600/10 rounded-full blur-3xl"></div>
+   
+    <div className="absolute inset-0 bg-gradient-to-r from-teal-600/30 via-cyan-600/20 to-blue-600/30"></div>
+
+  
+    <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+    <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-cyan-300/20 rounded-full blur-3xl"></div>
   </div>
 
   <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch">
-  {/* Left Content */}
-  <div className="flex flex-col justify-start">
-    <div className="space-y-8">
-      <h1 className="text-7xl font-black leading-none">
-        <span className="block text-white">REDEFINING</span>
-        <span className="block bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-          LUXURY
-        </span>
-      </h1>
+      
+      {/* Left Content */}
+      <div className="flex flex-col justify-start">
+        <div className="space-y-8">
+          <h1 className="text-7xl font-black leading-none">
+            <span className="block text-white">REDEFINING</span>
+            <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-blue-200 bg-clip-text text-transparent">
+              LUXURY
+            </span>
+          </h1>
 
-      <p className="text-2xl text-zinc-400 leading-relaxed">
-        KBC Beverages is a premier event planning company specializing in mobile bar services. 
-        With over 10 years of expertise in hospitality, we transform venues into vibrant, 
-        stylish bar experiences. From private celebrations to large-scale corporate events, 
-        we deliver a seamless bar set up with premium glassware, curated decor, and only the 
-        freshest ingredients. Our mission is simple: to create unforgettable moments where 
-        every sip counts.
-      </p>
+          <p className="text-2xl text-cyan-50/80 leading-relaxed">
+            KBC Beverages is a premier event planning company specializing in mobile bar services. 
+            With over 10 years of expertise in hospitality, we transform venues into vibrant, 
+            stylish bar experiences. From private celebrations to large-scale corporate events, 
+            we deliver a seamless bar set up with premium glassware, curated decor, and only the 
+            freshest ingredients. Our mission is simple: to create unforgettable moments where 
+            every sip counts.
+          </p>
+        </div>
+      </div>
+
+      {/* Right Side - Mocktail Image */}
+      <div className="flex">
+        <img
+          src="/Images/mocktail.png"
+          alt="Luxury Mocktail"
+          className="h-full object-cover rounded-3xl shadow-[0_0_60px_rgba(236,72,153,0.5)]"
+        />
+      </div>
+
     </div>
   </div>
-
-  {/* Right Side - Mocktail Image (matches text height) */}
-  <div className="flex">
-    <img
-      src="/Images/mocktail.png"
-      alt="Luxury Mocktail"
-      className="h-full object-cover rounded-3xl shadow-[0_0_60px_rgba(236,72,153,0.5)]"
-    />
-  </div>
-</div>
-
-  </div>
 </section>
+
 
 
       
 
 
 
-{/* Core Values Section - Rotating Orbit */}
-<section className="relative py-40 bg-black overflow-hidden">
-  {/* Background glow */}
-  <div className="absolute inset-0 flex items-center justify-center">
-    <div className="w-[700px] h-[700px] bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-full blur-3xl"></div>
+{/* Values Section - Flowing Anchors */}
+<section className="py-32 relative overflow-hidden">
+  {/* Decorative Background */}
+  <div className="absolute inset-0">
+    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-200/30 to-transparent"></div>
+    <div className="absolute top-1/3 left-1/2 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl"></div>
+    <div className="absolute bottom-0 right-0 w-80 h-80 bg-teal-500/10 rounded-full blur-2xl"></div>
   </div>
 
-  <div className="relative z-10 max-w-6xl mx-auto px-6">
-    {/* Section Heading */}
-    <div className="text-center mb-24">
-      <h2 className="text-6xl font-black text-white mb-6 tracking-tight">
-        CORE{" "}
-        <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-          VALUES
-        </span>
+  <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+    {/* Section Title */}
+    <div className="text-center mb-28">
+      <h2 className="text-6xl font-black text-white mb-6">
+        CORE <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">VALUES</span>
       </h2>
-      <p className="text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-        The heart of everything we do — orbiting around one central purpose.
+      <p className="text-xl text-cyan-50/80 max-w-3xl mx-auto">
+        The principles that drive every decision, every creation, every moment we craft
       </p>
     </div>
 
-    {/* Orbit Container */}
-    <div className="relative w-full h-[600px] flex items-center justify-center">
-      {/* Core Circle */}
-      <div className="absolute w-56 h-56 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-black text-2xl shadow-[0_0_60px_rgba(236,72,153,0.5)] z-20">
-        CORE
-        <br />
-        VALUES
-      </div>
+    {/* Flow Layout */}
+    <div className="relative">
+      <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-200/30 to-transparent"></div>
 
-      {/* Rotating Orbit Layer */}
-      <div className="absolute w-[600px] h-[600px] animate-spin-slower">
-        {values.map((value, i) => {
-          const angle = (i / values.length) * 2 * Math.PI;
-          const radius = 260;
-          const x = radius * Math.cos(angle);
-          const y = radius * Math.sin(angle);
-
-          return (
-            <div
-              key={i}
-              className="absolute w-56"
-              style={{
-                left: `50%`,
-                top: `50%`,
-                transform: `translate(${x - 112}px, ${y - 112}px)`,
-              }}
-            >
-              <div className="bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-800 rounded-2xl p-6 text-center shadow-xl">
-                <div className="mb-4 flex justify-center">
-                  <div className="bg-gradient-to-br from-purple-500 to-pink-500 p-4 rounded-xl">
-                    <value.icon className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">{value.title}</h3>
-                <p className="text-zinc-400 text-sm">{value.description}</p>
+      <div className="space-y-32">
+        {values.map((value, index) => (
+          <div 
+            key={index} 
+            className={`relative flex flex-col lg:flex-row items-center ${
+              index % 2 === 0 ? "lg:flex-row-reverse" : ""
+            }`}
+          >
+            {/* Anchor Circle */}
+            <div className="relative flex-shrink-0">
+              <div className="absolute inset-0 bg-cyan-400/30 blur-2xl rounded-full"></div>
+              <div className="relative w-24 h-24 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
+                <value.icon className="h-10 w-10 text-white" />
               </div>
             </div>
-          );
-        })}
+
+            {/* Content */}
+            <div className={`lg:w-1/2 mt-10 lg:mt-0 ${index % 2 === 0 ? "lg:mr-auto lg:text-right pr-12" : "lg:ml-auto lg:text-left pl-12"}`}>
+              <h3 className="text-3xl font-black text-white mb-4">{value.title}</h3>
+              <p className="text-lg text-cyan-50/80 leading-relaxed">{value.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </div>
 </section>
 
- {/* Company Culture Section */}
+
+   {/* Company Culture Section */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-purple-900/10 to-transparent"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-600/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-teal-600/30 to-transparent"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
         </div>
         
         <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-20">
             <h2 className="text-6xl font-black text-white mb-6">
-              COMPANY <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">CULTURE</span>
+              COMPANY <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">CULTURE</span>
             </h2>
-            <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
+            <p className="text-xl text-cyan-50/80 max-w-3xl mx-auto">
               Built on passion, driven by innovation, united by excellence
             </p>
           </div>
@@ -194,7 +187,7 @@ const About = () => {
                     
                     <div>
                       <h3 className="text-2xl font-bold text-white mb-4">{culture.title}</h3>
-                      <p className="text-zinc-400 leading-relaxed">{culture.description}</p>
+                      <p className="text-cyan-50/80 leading-relaxed">{culture.description}</p>
                     </div>
                   </div>
                 ))}
@@ -202,18 +195,18 @@ const About = () => {
             </div>
             
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-3xl blur-2xl"></div>
-              <div className="relative bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-3xl p-12">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-cyan-300/20 rounded-3xl blur-2xl"></div>
+              <div className="relative bg-white/10 border border-white/20 rounded-3xl p-12 backdrop-blur-sm">
                 <blockquote className="text-2xl text-white leading-relaxed italic mb-8">
                   "At KBC, we believe that every beverage tells a story. Our mission is to craft narratives that captivate, inspire, and create lasting memories for every guest."
                 </blockquote>
                 <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
                     KC
                   </div>
                   <div>
                     <div className="text-white font-bold text-lg">Kristina Chen</div>
-                    <div className="text-purple-400">Founder & Creative Director</div>
+                    <div className="text-cyan-200">Founder & Creative Director</div>
                   </div>
                 </div>
               </div>
@@ -224,19 +217,18 @@ const About = () => {
 
 
 
-
       
 
       {/* Team Section - Card Grid */}
       <section className="py-32 relative">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
         
         <div className="max-w-8xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-20">
             <h2 className="text-6xl font-black text-white mb-6">
-              MASTER <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">CRAFTSMEN</span>
+              MASTER <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">CRAFTSMEN</span>
             </h2>
-            <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
+            <p className="text-xl text-cyan-50/80 max-w-3xl mx-auto">
               Meet the visionaries behind every extraordinary experience
             </p>
           </div>
@@ -245,14 +237,14 @@ const About = () => {
             {team.map((member, index) => (
               <div key={index} className="group text-center">
                 <div className="relative mb-8">
-                  <div className="absolute -inset-1 bg-gradient-to-br from-purple-600/30 to-pink-600/30 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                  <div className="relative bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-800 rounded-3xl p-12 transform group-hover:scale-105 transition-all duration-500">
-                    <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full mx-auto mb-8 flex items-center justify-center text-white text-2xl font-black">
+                  <div className="absolute -inset-1 bg-gradient-to-br from-white/30 to-cyan-300/30 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                  <div className="relative bg-white/10 border border-white/20 rounded-3xl p-12 transform group-hover:scale-105 transition-all duration-500 backdrop-blur-sm">
+                    <div className="w-24 h-24 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full mx-auto mb-8 flex items-center justify-center text-white text-2xl font-black">
                       {member.avatar}
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
-                    <p className="text-purple-400 font-medium mb-4">{member.role}</p>
-                    <p className="text-zinc-400">{member.specialty}</p>
+                    <p className="text-cyan-200 font-medium mb-4">{member.role}</p>
+                    <p className="text-cyan-100/70">{member.specialty}</p>
                   </div>
                 </div>
               </div>
@@ -261,66 +253,33 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative py-40 overflow-hidden bg-black">
-  {/* Gradient background + glowing rings */}
-  <div className="absolute inset-0">
-    <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-black to-pink-900/20"></div>
-    <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-purple-600/30 to-pink-600/30 blur-3xl animate-pulse"></div>
-    <div className="absolute top-1/2 left-1/2 w-[1000px] h-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-purple-500/20 animate-spin-slower"></div>
-  </div>
-
-  <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 text-center">
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className="space-y-12"
-    >
-      {/* Headline */}
-      <h2 className="text-7xl font-black text-white leading-tight tracking-tight">
-        JOIN OUR <br />
-        <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient">
-          LEGACY
-        </span>
-      </h2>
-
-      {/* Subtext */}
-      <p className="text-2xl text-zinc-400 max-w-3xl mx-auto leading-relaxed">
-        Become part of our story. Let’s create something extraordinary together.
-      </p>
-
-      {/* CTA Button with glow + magnetic hover */}
-      <motion.div
-        whileHover={{ scale: 1.05 }}
-        className="relative group inline-block"
-      >
-        <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur-lg opacity-40 group-hover:opacity-70 transition-all duration-500"></div>
-        <Link to="/contact" className="relative bg-white text-black px-14 py-6 rounded-2xl font-black text-xl flex items-center space-x-3 mx-auto shadow-lg hover:shadow-purple-500/40 transition-all duration-300">
-          <span>Start Your Journey</span>
-          <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform" />
-        </Link>
-      </motion.div>
-    </motion.div>
-  </div>
-
-  {/* Floating sparkles */}
-  <div className="absolute inset-0 pointer-events-none">
-    {[...Array(12)].map((_, i) => (
-      <Sparkles
-        key={i}
-        className="absolute text-purple-400/30 animate-float"
-        style={{
-          top: `${Math.random() * 100}%`,
-          left: `${Math.random() * 100}%`,
-          animationDuration: `${5 + Math.random() * 5}s`,
-          fontSize: `${12 + Math.random() * 18}px`,
-        }}
-      />
-    ))}
-  </div>
-</section>
+     {/* CTA Section */}
+      <section className="py-32 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-teal-600/30 via-cyan-600/20 to-blue-600/30"></div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 text-center">
+          <div className="space-y-12">
+            <h2 className="text-7xl font-black text-white leading-tight">
+              JOIN OUR <br />
+              <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
+                LEGACY
+              </span>
+            </h2>
+            
+            <p className="text-2xl text-cyan-50/80 max-w-3xl mx-auto leading-relaxed">
+              Become part of our story. Let's create something extraordinary together.
+            </p>
+            
+            <div className="relative group inline-block">
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-300 to-teal-400 rounded-2xl blur opacity-40 group-hover:opacity-70 transition-all duration-500"></div>
+              <Link to="/contact" className="relative bg-white text-black px-12 py-6 rounded-2xl font-black text-xl transition-all duration-300 hover:scale-105 flex items-center space-x-3 mx-auto">
+                <span>Start Your Journey</span>
+                <ArrowRight className="h-6 w-6" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>

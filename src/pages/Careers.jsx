@@ -156,54 +156,58 @@ const Careers = () => {
   ];
 
   return (
-    <div className=" bg-black">
+    <div className="pt-24 bg-gradient-to-br from-cyan-400 via-teal-500 to-blue-500 min-h-screen">
       {/* Hero Section */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-zinc-900 via-black to-black transform skew-x-12 origin-top-right"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12">
-          <div className="text-center space-y-12">
-           
-            
-            <h1 className="text-7xl lg:text-8xl font-black leading-none">
-              <span className="block text-white">CRAFT YOUR</span>
-              <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-                CAREER
-              </span>
-            </h1>
-            
-            <p className="text-2xl text-zinc-400 leading-relaxed max-w-4xl mx-auto">
-              Join a team of passionate artisans who are redefining luxury beverage experiences. 
-              Build your career in an environment that values creativity, innovation, and excellence.
-            </p>
-          </div>
-        </div>
-      </section>
+     <section className="pt-20 pb-32 relative overflow-hidden">
+  <div className="absolute inset-0">
+    
+    <div className="absolute inset-0 bg-gradient-to-r from-teal-600/30 via-cyan-600/20 to-blue-600/30"></div>
+
+    
+    <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+    <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-cyan-300/20 rounded-full blur-3xl"></div>
+  </div>
+  
+  <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12">
+    <div className="text-center space-y-12">
+      <h1 className="text-7xl lg:text-8xl font-black leading-none">
+        <span className="block text-white">CRAFT YOUR</span>
+        <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-blue-200 bg-clip-text text-transparent">
+          CAREER
+        </span>
+      </h1>
+      
+      <p className="text-2xl text-cyan-50/80 leading-relaxed max-w-4xl mx-auto">
+        Join a team of passionate artisans who are redefining luxury beverage experiences. 
+        Build your career in an environment that values creativity, innovation, and excellence.
+      </p>
+    </div>
+  </div>
+</section>
 
       
 
       {/* Job Openings - Unique Layout */}
-<section className="py-32 relative">
-  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent"></div>
-  
-  <div className="max-w-8xl mx-auto px-6 lg:px-12">
-    <div className="text-center space-y-8">
-      <h2 className="text-6xl font-black text-white mb-6">
-        OPEN <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">POSITIONS</span>
-      </h2>
-      <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
+ {/* Job Openings - Unique Layout */}
+      <section className="py-32 relative">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+        
+        <div className="max-w-8xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-20">
+            <h2 className="text-6xl font-black text-white mb-6">
+              OPEN <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">POSITIONS</span>
+            </h2>
+       <p className="text-xl text-cyan-50/80 max-w-3xl mx-auto">
         At the moment, we don’t have any open positions.  
         Our team is complete for now — but exciting opportunities are on the horizon.  
         Please check back soon, or follow us to stay updated when new roles become available.
       </p>
 
       <div className="mt-12">
-        <span className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-lg">
-           New opportunities coming soon
-        </span>
+        <span className="inline-block bg-gradient-to-r from-teal-500 to-cyan-500 text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-lg">
+  New opportunities coming soon
+</span>
+
       </div>
     </div>
   </div>

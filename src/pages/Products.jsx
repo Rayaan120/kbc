@@ -143,33 +143,35 @@ const Products = () => {
   };
 
   return (
-    <div className="bg-black">
+    <div className="pt-24 bg-gradient-to-br from-cyan-400 via-teal-500 to-blue-500 min-h-screen">
       {/* Hero Section */}
-      <section className="py-32 relative overflow-hidden">
+     <section className="pt-20 pb-32 relative overflow-hidden">
+  <div className="absolute inset-0">
+    
+    <div className="absolute inset-0 bg-gradient-to-r from-teal-600/30 via-cyan-600/20 to-blue-600/30"></div>
 
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-zinc-900 via-black to-black transform -skew-x-12 origin-top-right"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12">
-          <div className="text-center space-y-12">
-           
-            
-            <h1 className="text-7xl lg:text-8xl font-black leading-none">
-              <span className="block text-white">LIQUID</span>
-              <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-                ARTISTRY
-              </span>
-            </h1>
-            
-            <p className="text-2xl text-zinc-400 leading-relaxed max-w-4xl mx-auto">
-              Discover our curated collection of revolutionary beverages, where science meets artistry 
-              and every sip tells a story of innovation and perfection.
-            </p>
-          </div>
-        </div>
-      </section>
+    
+    <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+    <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-cyan-300/20 rounded-full blur-3xl"></div>
+  </div>
+  
+  <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12">
+    <div className="text-center space-y-12">
+      <h1 className="text-7xl lg:text-8xl font-black leading-none">
+        <span className="block text-white">LIQUID</span>
+        <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-blue-200 bg-clip-text text-transparent">
+          ARTISTRY
+        </span>
+      </h1>
+      
+      <p className="text-2xl text-cyan-50/80 leading-relaxed max-w-4xl mx-auto">
+        Discover our curated collection of revolutionary beverages, where science meets artistry 
+        and every sip tells a story of innovation and perfection.
+      </p>
+    </div>
+  </div>
+</section>
+
 
       
 
@@ -205,22 +207,20 @@ const Products = () => {
 
       {/* Custom Creation Section */}
       <section className="py-32 relative">
-  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent"></div>
-  
-  <div className="max-w-6xl mx-auto px-6 lg:px-12">
-    <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-black to-pink-900/20 rounded-3xl"></div>
-      <div className="relative bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-800 rounded-3xl p-16 text-center">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
         
-       
-        
-        <h2 className="text-6xl font-black text-white mb-8">
-          BESPOKE <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">CREATIONS</span>
-        </h2>
-        
-        <p className="text-2xl text-zinc-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-          Have a vision that transcends our collection? Our master mixologists are ready to craft a one-of-a-kind beverage experience tailored exclusively for you.
-        </p>
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-teal-600/30 via-cyan-600/20 to-blue-600/30 rounded-3xl"></div>
+            <div className="relative bg-white/10 border border-white/20 rounded-3xl p-16 text-center backdrop-blur-sm">
+              
+              <h2 className="text-6xl font-black text-white mb-8">
+                BESPOKE <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">CREATIONS</span>
+              </h2>
+              <p className="text-2xl text-cyan-50/80 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Have a vision that transcends our collection? Our master mixologists will craft 
+                a completely unique beverage experience tailored to your exact specifications.
+              </p>
         
         {/* Centered Single Button */}
         <div className="relative group inline-block">
