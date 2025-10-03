@@ -89,12 +89,13 @@ useEffect(() => {
       {/* Left Content */}
       <div className="lg:col-span-7 space-y-12">
         <div className="space-y-8">
-          <h1 className="text-7xl lg:text-8xl xl:text-9xl font-black leading-none drop-shadow-lg">
-            <span className="block text-white">CRAFT</span>
-            <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-blue-200 bg-clip-text text-transparent">
-              PERFECTION
-            </span>
-          </h1>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none drop-shadow-lg">
+  <span className="block text-white">CRAFT</span>
+  <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-blue-200 bg-clip-text text-transparent">
+    PERFECTION
+  </span>
+</h1>
+
           
           <p className="text-2xl text-cyan-50/90 leading-relaxed max-w-2xl drop-shadow-md">
             Elevate your events with our revolutionary approach to beverage artistry. 
@@ -123,80 +124,59 @@ useEffect(() => {
 
  {/* Services Preview - Asymmetric Layout */}
       <section className="py-32 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-        
-        <div className="max-w-8xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            {/* Left - Services */}
-            <div className="space-y-12">
-              <div>
-                <h2 className="text-6xl font-black text-white mb-6">
-                  SIGNATURE <br />
-                  <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
-                    EXPERIENCES
-                  </span>
-                </h2>
-                <p className="text-xl text-cyan-50/80 leading-relaxed">
-                  From molecular gastronomy to classic mixology, we create bespoke beverage experiences that define luxury events.
-                </p>
-              </div>
-              
-              <div className="space-y-8">
-                {[
-                  { title: "Molecular Mixology", desc: "Scientific artistry in every glass" },
-            { title: "Corporate Catering", desc: "Professional service for business events" },
-            { title: "Wedding Packages", desc: "Romantic beverages for your special day" },
-            { title: "Private Parties", desc: "Unforgettable drinks tailored for intimate celebrations" },
-            { title: "Brand Launching", desc: "Innovative beverage concepts to elevate your brand event" },
-            { title: "Mixology", desc: "Creative bartending tailored for any occasion" },
-            { title: "Equipment Renting", desc: "Special glassware and bar tools for hire" }
-                ].map((service, index) => (
-                  <div key={index} className="group cursor-pointer">
-                    <div className="flex items-center space-x-6 p-6 rounded-2xl border border-white/20 hover:border-white/30 transition-all duration-300 hover:bg-white/10 backdrop-blur-sm">
-                      <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">
-                        {index + 1}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
-                        <p className="text-cyan-100/70">{service.desc}</p>
-                      </div>
-                     
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
 
-            {/* Right - Visual */}
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-cyan-300/20 rounded-full blur-3xl"></div>
-              <div className="relative grid grid-cols-2 gap-6">
-                <div className="space-y-6">
-                  <div className="bg-white/10 border border-white/20 rounded-2xl p-8 text-center backdrop-blur-sm">
-                    <div className="text-4xl mb-4">🍸</div>
-                    <h3 className="text-white font-bold">Premium Mocktails</h3>
-                  </div>
-                  <div className="bg-white/10 border border-white/20 rounded-2xl p-8 text-center backdrop-blur-sm">
-                    <div className="text-4xl mb-4">🥂</div>
-                    <h3 className="text-white font-bold">Elegant Service</h3>
-                  </div>
-                </div>
-                <div className="space-y-6 mt-12">
-                  <div className="bg-white/10 border border-white/20 rounded-2xl p-8 text-center backdrop-blur-sm">
-                    <div className="text-4xl mb-4">🧪</div>
-                    <h3 className="text-white font-bold">Molecular Art</h3>
-                  </div>
-                 <div className="bg-white/10 border border-white/20 rounded-2xl p-8 text-center backdrop-blur-sm">
-  <div className="text-4xl mb-4">🎨</div>
-  <h3 className="text-white font-bold">Custom Creations</h3>
-</div>
+  <div className="max-w-8xl mx-auto px-6 lg:px-12">
+    <div className="space-y-16">
+      
+      {/* Centered Heading */}
+      <div className="text-center max-w-4xl mx-auto">
+        <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white mb-6 leading-snug">
+  SIGNATURE <br />
+  <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
+    EXPERIENCES
+  </span>
+</h2>
 
-                </div>
+        <p className="text-xl text-cyan-50/80 leading-relaxed">
+          From molecular gastronomy to classic mixology, we create bespoke beverage 
+          experiences that define luxury events.
+        </p>
+      </div>
+
+      {/* Services Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        {[
+          { title: "Molecular Mixology", desc: "Scientific artistry in every glass" },
+          { title: "Corporate Catering", desc: "Professional service for business events" },
+          { title: "Wedding Packages", desc: "Romantic beverages for your special day" },
+          { title: "Private Parties", desc: "Unforgettable drinks tailored for intimate celebrations" },
+          { title: "Brand Launching", desc: "Innovative beverage concepts to elevate your brand event" },
+          { title: "Mixology", desc: "Creative bartending tailored for any occasion" },
+          { title: "Equipment Renting", desc: "Special glassware and bar tools for hire" },
+           { title: "Luxury Bar Setup", desc: "Elegant bar designs that elevate the atmosphere of any event" }
+        ].map((service, index) => (
+          <div 
+            key={index} 
+            className="group cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-cyan-500/20"
+          >
+            <div className="flex items-center space-x-6 p-6 rounded-2xl border border-white/20 
+                            hover:border-cyan-400/50 hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
+              <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">
+                {index + 1}
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
+                <p className="text-cyan-100/70">{service.desc}</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 
@@ -207,7 +187,7 @@ useEffect(() => {
   <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12">
     {/* Heading */}
     <div className="text-center mb-24">
-      <h2 className="text-6xl font-black text-white mb-6 tracking-tight">
+      <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-white mb-6 leading-snug">
         OUR{" "}
         <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
           PROCESS
@@ -218,32 +198,38 @@ useEffect(() => {
       </p>
     </div>
 
-    {/* Horizontal Flow */}
-    <div className="relative flex items-center justify-between">
-      {/* Connector line */}
-      <div className="absolute top-1/2 left-0 w-full h-[2px] bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400"></div>
+    {/* Process Flow */}
+    <div className="relative">
+      {/* Horizontal line (desktop only) */}
+      <div className="hidden lg:block absolute top-[65px] left-0 w-full h-[2px] bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400"></div>
+      
+      {/* Vertical line (mobile only) */}
+      <div className="lg:hidden absolute top-0 left-[29px] h-full w-[2px] bg-gradient-to-b from-cyan-400 via-teal-400 to-blue-400"></div>
 
-      {[
-        { step: "01", title: "Consultation", desc: "We understand your goals and vision." },
-        { step: "02", title: "Creation", desc: "Unique concepts crafted with care." },
-        { step: "03", title: "Testing", desc: "Flavors and details perfected." },
-        { step: "04", title: "Event Setups", desc: "Designing the ultimate service space." },
-        { step: "05", title: "Delivery", desc: "A flawless experience executed." },
-      ].map((p, i) => (
-        <div
-          key={i}
-          className="relative flex flex-col items-center text-center w-40"
-        >
-          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-teal-500 flex items-center justify-center text-lg font-black text-white shadow-lg mb-6">
-            {p.step}
+      <div className="grid grid-cols-1 lg:flex lg:justify-between gap-12 lg:gap-0">
+        {[
+          { step: "01", title: "Consultation", desc: "We understand your goals and vision." },
+          { step: "02", title: "Creation", desc: "Unique concepts crafted with care." },
+          { step: "03", title: "Testing", desc: "Flavors and details perfected." },
+          { step: "04", title: "Event Setups", desc: "Designing the ultimate service space." },
+          { step: "05", title: "Delivery", desc: "A flawless experience executed." },
+        ].map((p, i) => (
+          <div
+            key={i}
+            className="relative flex flex-col items-center text-center lg:w-40"
+          >
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-teal-500 flex items-center justify-center text-lg font-black text-white shadow-lg mb-6 z-10">
+              {p.step}
+            </div>
+            <h3 className="text-xl font-bold text-white mb-2">{p.title}</h3>
+            <p className="text-sm text-cyan-50/70">{p.desc}</p>
           </div>
-          <h3 className="text-xl font-bold text-white mb-2">{p.title}</h3>
-          <p className="text-sm text-cyan-50/70">{p.desc}</p>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </div>
 </section>
+
 
      
       {/* Google Reviews Section - Unique Floating Cards */}
@@ -315,12 +301,13 @@ useEffect(() => {
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 text-center">
           <div className="space-y-12">
-            <h2 className="text-7xl font-black text-white leading-tight">
-             Designing Experiences  <br />
-              <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
-               Beyond the Glass
-              </span>
-            </h2>
+           <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white leading-snug">
+  Designing Experiences <br />
+  <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
+    Beyond the Glass
+  </span>
+</h2>
+
             
             <p className="text-2xl text-cyan-50/80 max-w-3xl mx-auto leading-relaxed">
                 Not just drinks. Not just service. An unforgettable performance where

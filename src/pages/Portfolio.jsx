@@ -18,12 +18,12 @@ const Portfolio = () => {
   
   <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12">
     <div className="text-center space-y-12">
-      <h1 className="text-7xl lg:text-8xl font-black leading-none">
-        <span className="block text-white">PORTFOLIO</span>
-        <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-blue-200 bg-clip-text text-transparent">
-          SHOWCASE
-        </span>
-      </h1>
+      <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none drop-shadow-lg">
+  <span className="block text-white">PORTFOLIO</span>
+  <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-blue-200 bg-clip-text text-transparent">
+    SHOWCASE
+  </span>
+</h1>
       
       <p className="text-2xl text-cyan-50/80 leading-relaxed max-w-4xl mx-auto">
         Discover the extraordinary events we've transformed through innovative beverage artistry. 
@@ -40,9 +40,12 @@ const Portfolio = () => {
   <div className="absolute inset-0 bg-gradient-to-b from-teal-600/30 via-cyan-600/20 to-blue-600/30"></div>
 
   <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 text-center">
-    <h2 className="text-6xl font-black text-white mb-16">
-       CORPORATE <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">CLIENTS</span>
-    </h2>
+    <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white mb-6 leading-snug">
+  CORPORATE <br />
+  <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
+    CLIENTS
+  </span>
+</h2>
 
     {/* Logos Grid */}
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-12 items-center justify-center">
@@ -99,12 +102,12 @@ const Portfolio = () => {
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 text-center">
           <div className="space-y-12">
-            <h2 className="text-7xl font-black text-white leading-tight">
-              READY FOR YOUR <br />
-              <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
-                SHOWCASE?
-              </span>
-            </h2>
+             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white leading-snug">
+  READY FOR YOUR <br />
+  <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
+    SHOWCASE?
+  </span>
+</h2>
             
             <p className="text-2xl text-cyan-50/80 max-w-3xl mx-auto leading-relaxed">
               Let's create an extraordinary event that will become part of our next portfolio showcase.

@@ -143,10 +143,10 @@ const Products = () => {
   };
 
   return (
-    <div className="pt-24 bg-gradient-to-br from-cyan-400 via-teal-500 to-blue-500 min-h-screen">
+    <div className="pt-24 bg-gradient-to-br from-cyan-400 via-teal-500 to-blue-500 min-h-screen overflow-x-hidden">
       {/* Hero Section */}
      <section className="pt-20 pb-32 relative overflow-hidden">
-  <div className="absolute inset-0">
+  <div className="absolute inset-0 overflow-hidden">
     
     <div className="absolute inset-0 bg-gradient-to-r from-teal-600/30 via-cyan-600/20 to-blue-600/30"></div>
 
@@ -205,27 +205,35 @@ const Products = () => {
 
 
 
-      {/* Custom Creation Section */}
-      <section className="py-32 relative">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+     <section className="py-32 relative">
+  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+
+  <div className="max-w-6xl mx-auto px-6 lg:px-12">
+    <div className="relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-teal-600/30 via-cyan-600/20 to-blue-600/30 rounded-3xl"></div>
+      <div className="relative bg-white/10 border border-white/20 rounded-3xl p-8 sm:p-16 text-center backdrop-blur-sm">
         
-        <div className="max-w-6xl mx-auto px-6 lg:px-12">
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-teal-600/30 via-cyan-600/20 to-blue-600/30 rounded-3xl"></div>
-            <div className="relative bg-white/10 border border-white/20 rounded-3xl p-16 text-center backdrop-blur-sm">
-              
-              <h2 className="text-6xl font-black text-white mb-8">
-                BESPOKE <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">CREATIONS</span>
-              </h2>
-              <p className="text-2xl text-cyan-50/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Have a vision that transcends our collection? Our master mixologists will craft 
-                a completely unique beverage experience tailored to your exact specifications.
-              </p>
-        
-        {/* Centered Single Button */}
-        <div className="relative group inline-block">
+        {/* Heading - smaller on mobile */}
+        <h2 className="text-4xl sm:text-6xl font-black text-white mb-6 sm:mb-8 leading-tight">
+          BESPOKE{" "}
+          <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
+            CREATIONS
+          </span>
+        </h2>
+
+        {/* Paragraph - more fluid */}
+        <p className="text-lg sm:text-2xl text-cyan-50/80 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed">
+          Have a vision that transcends our collection? Our master mixologists will craft 
+          a completely unique beverage experience tailored to your exact specifications.
+        </p>
+
+        {/* Button - fully responsive */}
+        <div className="relative group inline-block w-full sm:w-auto">
           <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition-all duration-500"></div>
-          <Link to = "/contact" className="relative bg-white text-black px-12 py-6 rounded-2xl font-black text-xl transition-all duration-300 hover:scale-105">
+          <Link 
+            to="/contact" 
+            className="relative bg-white text-black w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-6 rounded-2xl font-black text-lg sm:text-xl transition-all duration-300 hover:scale-105 block text-center"
+          >
             Contact Us Now
           </Link>
         </div>
@@ -234,6 +242,7 @@ const Products = () => {
     </div>
   </div>
 </section>
+
 
 
       <Footer />

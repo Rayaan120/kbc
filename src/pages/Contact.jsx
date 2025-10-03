@@ -87,7 +87,7 @@ const [isSending, setIsSending] = useState(false);
     {
       icon: Clock,
       title: "Studio Hours",
-      primary: "Mon-Sun: 9AM - 6PM",
+      primary: "Mon-Sat: 9AM - 6PM",
       secondary: "Weekends: By arrangement",
       color: "amber"
     }

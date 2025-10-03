@@ -56,12 +56,12 @@ const About = () => {
       {/* Left Content */}
       <div className="flex flex-col justify-start">
         <div className="space-y-8">
-          <h1 className="text-7xl font-black leading-none">
-            <span className="block text-white">REDEFINING</span>
-            <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-blue-200 bg-clip-text text-transparent">
-              LUXURY
-            </span>
-          </h1>
+         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none drop-shadow-lg">
+  <span className="block text-white">REDEFINING</span>
+  <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-blue-200 bg-clip-text text-transparent">
+    LUXURY
+  </span>
+</h1>
 
           <p className="text-2xl text-cyan-50/80 leading-relaxed">
             KBC Beverages is a premier event planning company specializing in mobile bar services. 
@@ -104,7 +104,7 @@ const About = () => {
 
   <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
     {/* Section Title */}
-    <div className="text-center mb-28">
+    <div className="text-center mb-20">
       <h2 className="text-6xl font-black text-white mb-6">
         CORE <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">VALUES</span>
       </h2>
@@ -113,34 +113,23 @@ const About = () => {
       </p>
     </div>
 
-    {/* Flow Layout */}
-    <div className="relative">
-      <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-200/30 to-transparent"></div>
-
-      <div className="space-y-32">
-        {values.map((value, index) => (
-          <div 
-            key={index} 
-            className={`relative flex flex-col lg:flex-row items-center ${
-              index % 2 === 0 ? "lg:flex-row-reverse" : ""
-            }`}
-          >
-            {/* Anchor Circle */}
-            <div className="relative flex-shrink-0">
-              <div className="absolute inset-0 bg-cyan-400/30 blur-2xl rounded-full"></div>
-              <div className="relative w-24 h-24 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
-                <value.icon className="h-10 w-10 text-white" />
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className={`lg:w-1/2 mt-10 lg:mt-0 ${index % 2 === 0 ? "lg:mr-auto lg:text-right pr-12" : "lg:ml-auto lg:text-left pl-12"}`}>
-              <h3 className="text-3xl font-black text-white mb-4">{value.title}</h3>
-              <p className="text-lg text-cyan-50/80 leading-relaxed">{value.description}</p>
+    {/* Grid Layout (no big gaps) */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+      {values.map((value, index) => (
+        <div key={index} className="flex flex-col items-center">
+          {/* Icon */}
+          <div className="relative mb-6">
+            <div className="absolute inset-0 bg-cyan-400/30 blur-2xl rounded-full"></div>
+            <div className="relative w-24 h-24 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
+              <value.icon className="h-10 w-10 text-white" />
             </div>
           </div>
-        ))}
-      </div>
+
+          {/* Text */}
+          <h3 className="text-2xl font-black text-white mb-3">{value.title}</h3>
+          <p className="text-lg text-cyan-50/80 leading-relaxed">{value.description}</p>
+        </div>
+      ))}
     </div>
   </div>
 </section>
@@ -225,9 +214,12 @@ const About = () => {
         
         <div className="max-w-8xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-20">
-            <h2 className="text-6xl font-black text-white mb-6">
-              MASTER <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">CRAFTSMEN</span>
-            </h2>
+           <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white mb-6 leading-snug">
+  MASTER <br />
+  <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
+    CRAFTSMEN
+  </span>
+</h2>
             <p className="text-xl text-cyan-50/80 max-w-3xl mx-auto">
               Meet the visionaries behind every extraordinary experience
             </p>
