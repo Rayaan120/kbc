@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Users, MapPin, Clock, DollarSign, Star, Send, Briefcase, Award, Heart, Zap } from 'lucide-react';
 import Footer from '../components/Footer';
+import { motion } from "framer-motion";
+import { Users, Award, Heart, Zap } from 'lucide-react';
 
 const Careers = () => {
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
   const [selectedJob, setSelectedJob] = useState(null);
 
   const jobOpenings = [
@@ -168,21 +173,29 @@ const Careers = () => {
     <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-cyan-300/20 rounded-full blur-3xl"></div>
   </div>
   
-  <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12">
-    <div className="text-center space-y-12">
-      <h1 className="text-7xl lg:text-8xl font-black leading-none">
+  
+    <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
+          className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12 text-center space-y-12"
+        >
+          <motion.h1 variants={fadeInUp} className="text-7xl lg:text-8xl font-black leading-none">
         <span className="block text-white">CRAFT YOUR</span>
         <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-blue-200 bg-clip-text text-transparent">
           CAREER
         </span>
-      </h1>
+      </motion.h1>
       
-      <p className="text-2xl text-cyan-50/80 leading-relaxed max-w-4xl mx-auto">
+       <motion.p
+            variants={fadeInUp}
+            className="text-2xl text-cyan-50/80 leading-relaxed max-w-4xl mx-auto"
+          >
         Join a team of passionate artisans who are redefining luxury beverage experiences. 
         Build your career in an environment that values creativity, innovation, and excellence.
-      </p>
-    </div>
-  </div>
+      </motion.p>
+    </motion.div>
+  
 </section>
 
       

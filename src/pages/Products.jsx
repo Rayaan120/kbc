@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
-import { Sparkles, Zap, Leaf, Star, ArrowRight, Filter, Contact } from 'lucide-react';
+import { Sparkles, Zap, Leaf, Star } from 'lucide-react';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
 
 const Products = () => {
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  const staggerContainer = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.1 } },
+  };
   const [activeCategory, setActiveCategory] = useState('signature');
 
   const categories = [
@@ -155,21 +165,32 @@ const Products = () => {
     <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-cyan-300/20 rounded-full blur-3xl"></div>
   </div>
   
-  <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12">
+   <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+          className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12 text-center space-y-12"
+        >
     <div className="text-center space-y-12">
-      <h1 className="text-7xl lg:text-8xl font-black leading-none">
+      <motion.h1
+            variants={fadeInUp}
+            className="text-7xl lg:text-8xl font-black leading-none"
+          >
         <span className="block text-white">LIQUID</span>
         <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-blue-200 bg-clip-text text-transparent">
           ARTISTRY
         </span>
-      </h1>
+      </motion.h1>
       
-      <p className="text-2xl text-cyan-50/80 leading-relaxed max-w-4xl mx-auto">
+        <motion.p
+            variants={fadeInUp}
+            className="text-2xl text-cyan-50/80 leading-relaxed max-w-4xl mx-auto"
+          >
         Discover our curated collection of revolutionary beverages, where science meets artistry 
         and every sip tells a story of innovation and perfection.
-      </p>
+      </motion.p>
     </div>
-  </div>
+  </motion.div>
 </section>
 
 
@@ -181,31 +202,39 @@ const Products = () => {
 <section className="py-20 relative">
   <div className="max-w-7xl mx-auto px-6 lg:px-12">
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      {Array.from({ length: 63 }).map((_, index) => (
-        <div
-          key={index}
-          className="group relative overflow-hidden rounded-3xl border border-zinc-800 shadow-lg"
-        >
-          {/* Bigger aspect ratio */}
-          <div className="aspect-[4/5] w-full h-auto">
-            <img
-              src={`/Images/mocktails/mocktail${index + 1}.jpg`}
-              alt={`Mocktail ${index + 1}`}
-              className="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-500"
-            />
-          </div>
+      {Array.from({ length: 63 })
+        .map((_, index) => index + 1)
+        .filter((num) => num !== 3) // 👈 Skip the 3rd image
+        .map((num) => (
+          <div
+            key={num}
+            className="group relative overflow-hidden rounded-3xl border border-zinc-800 shadow-lg"
+          >
+            <div className="aspect-[4/5] w-full h-auto">
+              <img
+                src={`/Images/mocktails/mocktail${num}.jpg`}
+                alt={`Mocktail ${num}`}
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-500"
+              />
+            </div>
 
-          {/* Hover overlay */}
-          <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        </div>
-      ))}
+            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </div>
+        ))}
     </div>
   </div>
 </section>
 
 
 
-     <section className="py-32 relative">
+
+      <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="py-32 relative"
+      >
   <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
 
   <div className="max-w-6xl mx-auto px-6 lg:px-12">
@@ -241,7 +270,7 @@ const Products = () => {
       </div>
     </div>
   </div>
-</section>
+</motion.section>
 
 
 

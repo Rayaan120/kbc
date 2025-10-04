@@ -1,9 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Eye } from 'lucide-react';
 import Footer from '../components/Footer';
+import { motion } from "framer-motion";
 
 const Portfolio = () => {
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  const staggerContainer = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.1 } },
+  };
+
+  const logoAnim = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
   return (
      <div className="pt-24 bg-gradient-to-br from-cyan-400 via-teal-500 to-blue-500 min-h-screen">
       {/* Hero Section */}
@@ -16,21 +31,30 @@ const Portfolio = () => {
     <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
   </div>
   
-  <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12">
-    <div className="text-center space-y-12">
-      <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none drop-shadow-lg">
+
+            <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
+          className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12 text-center space-y-12"
+        >
+          <motion.h1 variants={fadeInUp} className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none drop-shadow-lg">
+
   <span className="block text-white">PORTFOLIO</span>
   <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-blue-200 bg-clip-text text-transparent">
     SHOWCASE
   </span>
-</h1>
+</motion.h1>
       
-      <p className="text-2xl text-cyan-50/80 leading-relaxed max-w-4xl mx-auto">
+      <motion.p
+            variants={fadeInUp}
+            className="text-2xl text-cyan-50/80 leading-relaxed max-w-4xl mx-auto"
+          >
         Discover the extraordinary events we've transformed through innovative beverage artistry. 
         Each project represents our commitment to excellence and creative innovation.
-      </p>
-    </div>
-  </div>
+      </motion.p>
+    </motion.div>
+  
 </section>
 
 
@@ -97,31 +121,40 @@ const Portfolio = () => {
 
       {/* CTA Section */}
       {/* CTA Section */}
-      <section className="py-32 relative">
+       <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="py-32 relative"
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-teal-600/30 via-cyan-600/20 to-blue-600/30"></div>
-        
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 text-center">
           <div className="space-y-12">
-             <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white leading-snug">
-  READY FOR YOUR <br />
-  <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
-    SHOWCASE?
-  </span>
-</h2>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white leading-snug">
+              READY FOR YOUR <br />
+              <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
+                SHOWCASE?
+              </span>
+            </h2>
             
             <p className="text-2xl text-cyan-50/80 max-w-3xl mx-auto leading-relaxed">
               Let's create an extraordinary event that will become part of our next portfolio showcase.
             </p>
             
-            <div className="relative group inline-block">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 200 }}
+              className="relative group inline-block"
+            >
               <div className="absolute -inset-1 bg-gradient-to-r from-cyan-300 to-teal-400 rounded-2xl blur opacity-40 group-hover:opacity-70 transition-all duration-500"></div>
-              <Link to="/contact" className="relative bg-white text-black px-12 py-6 rounded-2xl font-black text-xl transition-all duration-300 hover:scale-105">
+              <Link to="/contact" className="relative bg-white text-black px-12 py-6 rounded-2xl font-black text-xl transition-all duration-300">
                 Start Your Project
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       <Footer />
     </div>

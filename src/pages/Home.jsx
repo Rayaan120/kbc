@@ -1,10 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { Star, ArrowRight, Play, Sparkles, Award, Users, TrendingUp, Quote } from 'lucide-react';
+import { Star, ArrowRight, Sparkles, Award, Users, TrendingUp, Quote } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 
+
 const Home = () => {
-    
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+  };
+
+  const staggerContainer = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.15 } },
+  };
+
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1 } },
+  };
   const reviews = [
   {
     name: "Sarah Chen",
@@ -77,49 +92,48 @@ useEffect(() => {
     <div className="relative overflow-hidden bg-gradient-to-br from-cyan-400 via-teal-500 to-blue-500 min-h-screen">
       {/* Hero Section - Unique Diagonal Layout */}
       <section 
-  className="relative min-h-screen flex items-center bg-cover bg-center" 
-  style={{ backgroundImage: "url('/Images/mocktail-bg.png')" }}
->
-  {/* Overlay to improve text readability */}
-  <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent"></div>
+        className="relative min-h-screen flex items-center bg-cover bg-center"
+        style={{ backgroundImage: "url('/Images/mocktail-bg.png')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent"></div>
 
-  <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12 pt-24">
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-      
-      {/* Left Content */}
-      <div className="lg:col-span-7 space-y-12">
-        <div className="space-y-8">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none drop-shadow-lg">
-  <span className="block text-white">CRAFT</span>
-  <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-blue-200 bg-clip-text text-transparent">
-    PERFECTION
-  </span>
-</h1>
+        <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12 pt-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
-          
-          <p className="text-2xl text-cyan-50/90 leading-relaxed max-w-2xl drop-shadow-md">
-            Elevate your events with our revolutionary approach to beverage artistry. 
-            Where molecular gastronomy meets timeless mixology.
-          </p>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-6">
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-300 to-teal-400 rounded-2xl blur opacity-40 group-hover:opacity-70 transition-all duration-500"></div>
-            <Link 
-              to="/products" 
-              className="relative bg-white text-black px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 hover:scale-105 flex items-center space-x-3"
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              animate="visible"
+              className="lg:col-span-7 space-y-12"
             >
-              <span>Explore Menu</span>
-              <ArrowRight className="h-5 w-5" />
-            </Link>
+              <motion.h1 variants={fadeInUp} className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none drop-shadow-lg">
+                <span className="block text-white">CRAFT</span>
+                <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-blue-200 bg-clip-text text-transparent">
+                  PERFECTION
+                </span>
+              </motion.h1>
+
+              <motion.p variants={fadeInUp} className="text-2xl text-cyan-50/90 leading-relaxed max-w-2xl drop-shadow-md">
+                Elevate your events with our revolutionary approach to beverage artistry. 
+                Where molecular gastronomy meets timeless mixology.
+              </motion.p>
+
+              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-6">
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-cyan-300 to-teal-400 rounded-2xl blur opacity-40 group-hover:opacity-70 transition-all duration-500"></div>
+                  <Link 
+                    to="/products"
+                    className="relative bg-white text-black px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 hover:scale-105 flex items-center space-x-3"
+                  >
+                    <span>Explore Menu</span>
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+      </section>
 
 
  {/* Services Preview - Asymmetric Layout */}
@@ -130,7 +144,13 @@ useEffect(() => {
     <div className="space-y-16">
       
       {/* Centered Heading */}
-      <div className="text-center max-w-4xl mx-auto">
+      <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-center max-w-4xl mx-auto"
+          >
         <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white mb-6 leading-snug">
   SIGNATURE <br />
   <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
@@ -142,40 +162,46 @@ useEffect(() => {
           From molecular gastronomy to classic mixology, we create bespoke beverage 
           experiences that define luxury events.
         </p>
-      </div>
+      </motion.div>
 
-      {/* Services Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-        {[
-          { title: "Molecular Mixology", desc: "Scientific artistry in every glass" },
-          { title: "Corporate Catering", desc: "Professional service for business events" },
-          { title: "Wedding Packages", desc: "Romantic beverages for your special day" },
-          { title: "Private Parties", desc: "Unforgettable drinks tailored for intimate celebrations" },
-          { title: "Brand Launching", desc: "Innovative beverage concepts to elevate your brand event" },
-          { title: "Mixology", desc: "Creative bartending tailored for any occasion" },
-          { title: "Equipment Renting", desc: "Special glassware and bar tools for hire" },
-           { title: "Luxury Bar Setup", desc: "Elegant bar designs that elevate the atmosphere of any event" }
-        ].map((service, index) => (
-          <div 
-            key={index} 
-            className="group cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-cyan-500/20"
+       <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
           >
-            <div className="flex items-center space-x-6 p-6 rounded-2xl border border-white/20 
-                            hover:border-cyan-400/50 hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
-              <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">
-                {index + 1}
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
-                <p className="text-cyan-100/70">{service.desc}</p>
-              </div>
-            </div>
+            {[
+              { title: "Molecular Mixology", desc: "Scientific artistry in every glass" },
+              { title: "Corporate Catering", desc: "Professional service for business events" },
+              { title: "Wedding Packages", desc: "Romantic beverages for your special day" },
+              { title: "Private Parties", desc: "Unforgettable drinks tailored for intimate celebrations" },
+              { title: "Brand Launching", desc: "Innovative beverage concepts to elevate your brand event" },
+              { title: "Mixology", desc: "Creative bartending tailored for any occasion" },
+              { title: "Equipment Renting", desc: "Special glassware and bar tools for hire" },
+              { title: "Luxury Bar Setup", desc: "Elegant bar designs that elevate the atmosphere of any event" }
+            ].map((service, i) => (
+              <motion.div
+                key={i}
+                variants={fadeInUp}
+                className="group cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:shadow-xl hover:shadow-cyan-500/20"
+              >
+                <div className="flex items-center space-x-6 p-6 rounded-2xl border border-white/20 hover:border-cyan-400/50 hover:bg-white/10 backdrop-blur-sm transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">
+                    {i + 1}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
+                    <p className="text-cyan-100/70">{service.desc}</p>
+                  </div>
+                </div>
+                
+              </motion.div>
+            ))}
+          </motion.div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
 
 
@@ -186,7 +212,13 @@ useEffect(() => {
 
   <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12">
     {/* Heading */}
-    <div className="text-center mb-24">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="text-center mb-24"
+    >
       <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-white mb-6 leading-snug">
         OUR{" "}
         <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
@@ -196,7 +228,7 @@ useEffect(() => {
       <p className="text-xl text-cyan-50/80 max-w-3xl mx-auto">
         A seamless journey from vision to delivery
       </p>
-    </div>
+    </motion.div>
 
     {/* Process Flow */}
     <div className="relative">
@@ -214,8 +246,12 @@ useEffect(() => {
           { step: "04", title: "Event Setups", desc: "Designing the ultimate service space." },
           { step: "05", title: "Delivery", desc: "A flawless experience executed." },
         ].map((p, i) => (
-          <div
+          <motion.div
             key={i}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.2 }}
             className="relative flex flex-col items-center text-center lg:w-40"
           >
             <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-teal-500 flex items-center justify-center text-lg font-black text-white shadow-lg mb-6 z-10">
@@ -223,7 +259,7 @@ useEffect(() => {
             </div>
             <h3 className="text-xl font-bold text-white mb-2">{p.title}</h3>
             <p className="text-sm text-cyan-50/70">{p.desc}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
@@ -233,11 +269,17 @@ useEffect(() => {
 
      
       {/* Google Reviews Section - Unique Floating Cards */}
-      <section className="py-32 relative">
+     <section className="py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-teal-600/30 via-cyan-600/20 to-blue-600/30"></div>
-        
-        <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12">
-          <div className="text-center mb-20">
+        <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12 text-center">
+
+          <motion.div
+            variants={fadeIn}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mb-20"
+          >
             <div className="inline-flex items-center space-x-3 bg-white/20 border border-white/30 rounded-full px-8 py-4 mb-8 backdrop-blur-sm">
               <div className="flex space-x-1">
                 {[...Array(5)].map((_, i) => (
@@ -247,56 +289,66 @@ useEffect(() => {
               <span className="text-white font-bold text-lg">4.9/5</span>
               <span className="text-cyan-100/70">Google Reviews</span>
             </div>
-            
             <h2 className="text-6xl font-black text-white mb-6">
               CLIENT <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">STORIES</span>
             </h2>
             <p className="text-xl text-cyan-50/80 max-w-3xl mx-auto">
               Real experiences from events we've transformed into unforgettable moments
             </p>
+          </motion.div>
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.6 }}
+              className="relative bg-gradient-to-br from-cyan-900/40 to-teal-800/40 backdrop-blur-xl border border-cyan-700/30 p-12 rounded-3xl shadow-2xl"
+            >
+              <Quote className="h-10 w-10 text-cyan-300 mx-auto mb-6" />
+              <p className="text-cyan-50 text-2xl italic leading-relaxed mb-10 min-h-[120px]">
+                "{reviews[activeIndex].text}"
+              </p>
+              <div className="flex justify-center items-center space-x-4">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-teal-500 flex items-center justify-center text-white font-bold text-xl shadow-md">
+                  {reviews[activeIndex].avatar}
+                </div>
+                <div className="text-left">
+                  <h4 className="text-white font-bold">{reviews[activeIndex].name}</h4>
+                  <p className="text-cyan-100/70 text-sm">{reviews[activeIndex].date}</p>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          <div className="flex justify-center mt-12 space-x-3">
+            {reviews.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveIndex(i)}
+                className={`w-3 h-3 rounded-full transition ${
+                  i === activeIndex
+                    ? 'bg-cyan-400 scale-125'
+                    : 'bg-cyan-800 hover:bg-cyan-400'
+                }`}
+              ></button>
+            ))}
           </div>
-
-
-    {/* Active Review */}
-<div className="relative bg-gradient-to-br from-cyan-900/40 to-teal-800/40 backdrop-blur-xl border border-cyan-700/30 p-12 rounded-3xl shadow-2xl transition-all duration-700 ease-in-out">
-  <Quote className="h-10 w-10 text-cyan-300 mx-auto mb-6" />
-  <p className="text-cyan-50 text-2xl italic leading-relaxed mb-10 min-h-[120px]">
-    "{reviews[activeIndex].text}"
-  </p>
-  <div className="flex justify-center items-center space-x-4">
-    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400 to-teal-500 flex items-center justify-center text-white font-bold text-xl shadow-md">
-      {reviews[activeIndex].avatar}
-    </div>
-    <div className="text-left">
-      <h4 className="text-white font-bold">{reviews[activeIndex].name}</h4>
-      <p className="text-cyan-100/70 text-sm">{reviews[activeIndex].date}</p>
-    </div>
-  </div>
-</div>
-
-{/* nav dots */}
-<div className="flex justify-center mt-12 space-x-3">
-  {reviews.map((_, i) => (
-    <button
-      key={i}
-      onClick={() => setActiveIndex(i)}
-      className={`w-3 h-3 rounded-full transition ${
-        i === activeIndex
-          ? "bg-cyan-400 scale-125"
-          : "bg-cyan-800 hover:bg-cyan-400"
-      }`}
-    ></button>
-  ))}
-</div>
-
-  </div>
-</section>
+        </div>
+      </section>
 
 
       
 
    {/* CTA Section - Full Width Dark */}
-      <section className="py-32 relative">
+      <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="py-32 relative"
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-teal-600/30 via-cyan-600/20 to-blue-600/30"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 text-center">
@@ -327,7 +379,7 @@ useEffect(() => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
 
       <Footer />

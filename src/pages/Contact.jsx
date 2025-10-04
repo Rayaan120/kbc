@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, Calendar, MessageSquare, Zap } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import Footer from '../components/Footer';
 import emailjs from 'emailjs-com';
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -111,8 +112,12 @@ const [isSending, setIsSending] = useState(false);
     "$10,000 - $25,000",
     "$25,000+"
   ];
-
+ const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
+  };
   return (
+
      <div className="pt-24 bg-gradient-to-br from-cyan-400 via-teal-500 to-blue-500 min-h-screen">
       {/* Hero Section */}
       <section className="pt-20 pb-32 relative overflow-hidden">
@@ -125,20 +130,25 @@ const [isSending, setIsSending] = useState(false);
     <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-cyan-300/20 rounded-full blur-3xl"></div>
   </div>
 
-  <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12">
-    <div className="text-center space-y-12">
-      <h1 className="text-7xl lg:text-8xl font-black leading-none">
+  
+     <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
+          className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12 text-center space-y-12"
+        >
+          <motion.h1 variants={fadeInUp} className="text-7xl lg:text-8xl font-black leading-none">
         <span className="block text-white">START YOUR</span>
         <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-blue-200 bg-clip-text text-transparent">
           JOURNEY
         </span>
-      </h1>
+      </motion.h1>
       <p className="text-2xl text-cyan-50/80 leading-relaxed max-w-4xl mx-auto">
         Ready to transform your vision into an extraordinary reality? 
         Let's discuss how we can create something truly unforgettable together.
       </p>
-    </div>
-  </div>
+    </motion.div>
+  
 </section>
 
 

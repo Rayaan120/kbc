@@ -1,10 +1,20 @@
 import React from 'react';
-import { Zap, Target, Award, Users, Clock, Star, ArrowRight, Sparkles } from 'lucide-react';
+import { Zap, Target, Award, ArrowRight } from 'lucide-react';
 import Footer from '../components/Footer';
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 
 const About = () => {
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  const staggerContainer = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.15 } },
+  };
+
   const timeline = [
     { year: "2018", title: "Foundation", description: "Started with a vision to revolutionize beverage experiences", highlight: true },
     { year: "2020", title: "Innovation", description: "Introduced molecular mixology to corporate events", highlight: false },
@@ -54,7 +64,12 @@ const About = () => {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch">
       
       {/* Left Content */}
-      <div className="flex flex-col justify-start">
+      <motion.div
+              initial={{ opacity: 0, x: -80 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              className="flex flex-col justify-start space-y-8"
+            >
         <div className="space-y-8">
          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-none drop-shadow-lg">
   <span className="block text-white">REDEFINING</span>
@@ -71,21 +86,26 @@ const About = () => {
             freshest ingredients. Our mission is simple: to create unforgettable moments where 
             every sip counts.
           </p>
+          </div>
+        </motion.div>
+      
+
+       {/* Right Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 80 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              className="flex"
+            >
+              <img
+                src="/Images/mocktail.png"
+                alt="Luxury Mocktail"
+                className="h-full object-cover rounded-3xl shadow-[0_0_60px_rgba(236,72,153,0.5)]"
+              />
+            </motion.div>
+          </div>
         </div>
-      </div>
-
-      {/* Right Side - Mocktail Image */}
-      <div className="flex">
-        <img
-          src="/Images/mocktail.png"
-          alt="Luxury Mocktail"
-          className="h-full object-cover rounded-3xl shadow-[0_0_60px_rgba(236,72,153,0.5)]"
-        />
-      </div>
-
-    </div>
-  </div>
-</section>
+      </section>
 
 
 
@@ -104,35 +124,48 @@ const About = () => {
 
   <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
     {/* Section Title */}
-    <div className="text-center mb-20">
+     <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center mb-20"
+          >
       <h2 className="text-6xl font-black text-white mb-6">
         CORE <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">VALUES</span>
       </h2>
       <p className="text-xl text-cyan-50/80 max-w-3xl mx-auto">
         The principles that drive every decision, every creation, every moment we craft
       </p>
-    </div>
+    </motion.div>
 
     {/* Grid Layout (no big gaps) */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
-      {values.map((value, index) => (
-        <div key={index} className="flex flex-col items-center">
-          {/* Icon */}
-          <div className="relative mb-6">
-            <div className="absolute inset-0 bg-cyan-400/30 blur-2xl rounded-full"></div>
-            <div className="relative w-24 h-24 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
-              <value.icon className="h-10 w-10 text-white" />
-            </div>
-          </div>
-
-          {/* Text */}
-          <h3 className="text-2xl font-black text-white mb-3">{value.title}</h3>
-          <p className="text-lg text-cyan-50/80 leading-relaxed">{value.description}</p>
+    <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center"
+          >
+            {values.map((value, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="flex flex-col items-center"
+              >
+                <div className="relative mb-6">
+                  <div className="absolute inset-0 bg-cyan-400/30 blur-2xl rounded-full"></div>
+                  <div className="relative w-24 h-24 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
+                    <value.icon className="h-10 w-10 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-black text-white mb-3">{value.title}</h3>
+                <p className="text-lg text-cyan-50/80 leading-relaxed">{value.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
 
    {/* Company Culture Section */}
@@ -143,48 +176,62 @@ const About = () => {
         </div>
         
         <div className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12">
-          <div className="text-center mb-20">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="text-center mb-20"
+          >
             <h2 className="text-6xl font-black text-white mb-6">
               COMPANY <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">CULTURE</span>
             </h2>
             <p className="text-xl text-cyan-50/80 max-w-3xl mx-auto">
               Built on passion, driven by innovation, united by excellence
             </p>
-          </div>
+          </motion.div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-12">
-              <div className="space-y-8">
-                {[
-                  {
-                    title: "Innovation First",
-                    description: "We constantly push boundaries, experimenting with new techniques and ingredients to create beverages that have never been seen before.",
-                    icon: "🚀"
-                  },
-                  {
-                    title: "Artisan Craftsmanship",
-                    description: "Every beverage is handcrafted by master mixologists who treat each creation as a work of art, ensuring perfection in every detail.",
-                    icon: "🎨"
-                  },
-                  {
-                    title: "Client Partnership",
-                    description: "We don't just serve clients; we partner with them to understand their vision and exceed their expectations at every turn.",
-                    icon: "🤝"
-                  }
-                ].map((culture, index) => (
-                  <div key={index} className="flex items-start space-x-6 group">
-                    
-                    <div>
-                      <h3 className="text-2xl font-bold text-white mb-4">{culture.title}</h3>
-                      <p className="text-cyan-50/80 leading-relaxed">{culture.description}</p>
-                    </div>
+            <motion.div
+              initial={{ opacity: 0, x: -60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-12"
+            >
+              {[
+                {
+                  title: "Innovation First",
+                  description: "We constantly push boundaries, experimenting with new techniques and ingredients to create beverages that have never been seen before.",
+                  icon: "🚀"
+                },
+                {
+                  title: "Artisan Craftsmanship",
+                  description: "Every beverage is handcrafted by master mixologists who treat each creation as a work of art, ensuring perfection in every detail.",
+                  icon: "🎨"
+                },
+                {
+                  title: "Client Partnership",
+                  description: "We don't just serve clients; we partner with them to understand their vision and exceed their expectations at every turn.",
+                  icon: "🤝"
+                }
+              ].map((culture, index) => (
+                <div key={index} className="flex items-start space-x-6 group">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-4">{culture.title}</h3>
+                    <p className="text-cyan-50/80 leading-relaxed">{culture.description}</p>
                   </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-cyan-300/20 rounded-3xl blur-2xl"></div>
+                </div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
               <div className="relative bg-white/10 border border-white/20 rounded-3xl p-12 backdrop-blur-sm">
                 <blockquote className="text-2xl text-white leading-relaxed italic mb-8">
                   "At KBC, we believe that every beverage tells a story. Our mission is to craft narratives that captivate, inspire, and create lasting memories for every guest."
@@ -199,54 +246,26 @@ const About = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
+
 
 
 
       
 
-      {/* Team Section - Card Grid */}
-      <section className="py-32 relative">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-        
-        <div className="max-w-8xl mx-auto px-6 lg:px-12">
-          <div className="text-center mb-20">
-           <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white mb-6 leading-snug">
-  MASTER <br />
-  <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
-    CRAFTSMEN
-  </span>
-</h2>
-            <p className="text-xl text-cyan-50/80 max-w-3xl mx-auto">
-              Meet the visionaries behind every extraordinary experience
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {team.map((member, index) => (
-              <div key={index} className="group text-center">
-                <div className="relative mb-8">
-                  <div className="absolute -inset-1 bg-gradient-to-br from-white/30 to-cyan-300/30 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-                  <div className="relative bg-white/10 border border-white/20 rounded-3xl p-12 transform group-hover:scale-105 transition-all duration-500 backdrop-blur-sm">
-                    <div className="w-24 h-24 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-full mx-auto mb-8 flex items-center justify-center text-white text-2xl font-black">
-                      {member.avatar}
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
-                    <p className="text-cyan-200 font-medium mb-4">{member.role}</p>
-                    <p className="text-cyan-100/70">{member.specialty}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
      {/* CTA Section */}
-      <section className="py-32 relative">
+      <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="py-32 relative"
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-teal-600/30 via-cyan-600/20 to-blue-600/30"></div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 text-center">
@@ -271,7 +290,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       <Footer />
     </div>
