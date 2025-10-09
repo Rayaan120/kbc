@@ -155,37 +155,34 @@ const Products = () => {
   return (
     <div className="pt-24 bg-gradient-to-br from-cyan-400 via-teal-500 to-blue-500 min-h-screen overflow-x-hidden">
       {/* Hero Section */}
-     <section className="pt-20 pb-32 relative overflow-hidden">
-  <div className="absolute inset-0 overflow-hidden">
-    
-    <div className="absolute inset-0 bg-gradient-to-r from-teal-600/30 via-cyan-600/20 to-blue-600/30"></div>
+    <section 
+  className="pt-20 pb-32 relative overflow-hidden bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: "url('/Images/smoke.png')" }}
+>
+  {/* Hero-style smoky black overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/90"></div>
 
-    
-    <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-    <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-cyan-300/20 rounded-full blur-3xl"></div>
-  </div>
-  
-   <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-          className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12 text-center space-y-12"
-        >
+  <motion.div
+    initial="hidden"
+    animate="visible"
+    variants={staggerContainer}
+    className="relative z-10 max-w-8xl mx-auto px-6 lg:px-12 text-center space-y-12"
+  >
     <div className="text-center space-y-12">
       <motion.h1
-            variants={fadeInUp}
-            className="text-7xl lg:text-8xl font-black leading-none"
-          >
+        variants={fadeInUp}
+        className="text-7xl lg:text-8xl font-black leading-none"
+      >
         <span className="block text-white">LIQUID</span>
         <span className="block bg-gradient-to-r from-cyan-200 via-teal-200 to-blue-200 bg-clip-text text-transparent">
           ARTISTRY
         </span>
       </motion.h1>
-      
-        <motion.p
-            variants={fadeInUp}
-            className="text-2xl text-cyan-50/80 leading-relaxed max-w-4xl mx-auto"
-          >
+
+      <motion.p
+        variants={fadeInUp}
+        className="text-2xl text-cyan-50/80 leading-relaxed max-w-4xl mx-auto"
+      >
         Discover our curated collection of revolutionary beverages, where science meets artistry 
         and every sip tells a story of innovation and perfection.
       </motion.p>
@@ -193,32 +190,43 @@ const Products = () => {
   </motion.div>
 </section>
 
-
       
 
       {/* Mocktails Gallery Section */}
 {/* Mocktails Gallery Section */}
 {/* Mocktails Gallery Section */}
-<section className="py-20 relative">
-  <div className="max-w-7xl mx-auto px-6 lg:px-12">
+{/* Mocktails Gallery Section */}
+<section 
+  className="py-20 relative overflow-hidden bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: "url('/Images/smoke.png')" }}
+>
+  {/* Hero-style black smoky overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/90"></div>
+
+  <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      {Array.from({ length: 63 })
+      {Array.from({ length: 72 })
         .map((_, index) => index + 1)
-        .filter((num) => num !== 3) // 👈 Skip the 3rd image
+        .filter(
+          (num) =>
+            ![3,  5, 6, 7, 17, 18, 20, 24, 28, 31, 38, 57, 71].includes(num) // 👈 Skipped images
+        )
         .map((num) => (
           <div
             key={num}
-            className="group relative overflow-hidden rounded-3xl border border-zinc-800 shadow-lg"
+            className="group relative overflow-hidden rounded-3xl border border-white/10 hover:border-cyan-400/30 transition-all duration-500 shadow-lg shadow-black/50"
           >
             <div className="aspect-[4/5] w-full h-auto">
               <img
                 src={`/Images/mocktails/mocktail${num}.jpg`}
                 alt={`Mocktail ${num}`}
-                className="w-full h-full object-cover transform group-hover:scale-110 transition-all duration-500"
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 ease-out"
+                loading="lazy"
               />
             </div>
 
-            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            {/* Hover overlay for subtle cinematic depth */}
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
         ))}
     </div>
@@ -228,21 +236,24 @@ const Products = () => {
 
 
 
-      <motion.section
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="py-32 relative"
-      >
+
+
+      <section
+  
+  className="py-32 relative overflow-hidden bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: "url('/Images/smoke.png')" }}
+>
+  {/* Hero-style black smoky overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/90"></div>
+
   <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
 
-  <div className="max-w-6xl mx-auto px-6 lg:px-12">
+  <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12">
     <div className="relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-teal-600/30 via-cyan-600/20 to-blue-600/30 rounded-3xl"></div>
-      <div className="relative bg-white/10 border border-white/20 rounded-3xl p-8 sm:p-16 text-center backdrop-blur-sm">
+      {/* Removed old teal/blue gradient and replaced with translucent smoky glass */}
+      <div className="relative bg-white/10 border border-white/20 rounded-3xl p-8 sm:p-16 text-center backdrop-blur-sm shadow-2xl shadow-black/40">
         
-        {/* Heading - smaller on mobile */}
+        {/* Heading */}
         <h2 className="text-4xl sm:text-6xl font-black text-white mb-6 sm:mb-8 leading-tight">
           BESPOKE{" "}
           <span className="bg-gradient-to-r from-cyan-200 to-teal-200 bg-clip-text text-transparent">
@@ -250,15 +261,15 @@ const Products = () => {
           </span>
         </h2>
 
-        {/* Paragraph - more fluid */}
+        {/* Paragraph */}
         <p className="text-lg sm:text-2xl text-cyan-50/80 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed">
           Have a vision that transcends our collection? Our master mixologists will craft 
           a completely unique beverage experience tailored to your exact specifications.
         </p>
 
-        {/* Button - fully responsive */}
+        {/* Button */}
         <div className="relative group inline-block w-full sm:w-auto">
-          <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition-all duration-500"></div>
+          <div className="absolute -inset-1 bg-gradient-to-r from-cyan-300 to-teal-400 rounded-2xl blur opacity-40 group-hover:opacity-70 transition-all duration-500"></div>
           <Link 
             to="/contact" 
             className="relative bg-white text-black w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-6 rounded-2xl font-black text-lg sm:text-xl transition-all duration-300 hover:scale-105 block text-center"
@@ -266,11 +277,11 @@ const Products = () => {
             Contact Us Now
           </Link>
         </div>
-
       </div>
     </div>
   </div>
-</motion.section>
+</section>
+
 
 
 
